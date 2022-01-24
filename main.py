@@ -11,6 +11,8 @@ from datetime import datetime
 bot = commands.Bot(command_prefix='!')
 client = discord.Client()
 
+username = "username" #replace with your lms username
+password = "password" #replace with your lms password
 
 def get_time():
     tz_NY = pytz.timezone('Asia/Kolkata')
@@ -25,9 +27,8 @@ def markit():
 
     driver.get(url)
 
-    driver.find_element_by_xpath('//*[@id="username"]').send_keys('b190875ec')
-    driver.find_element_by_xpath('//*[@id="password"]').send_keys(
-        'Onlineclasses#2020')
+    driver.find_element_by_xpath('//*[@id="username"]').send_keys(username)
+    driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
 
     
     element = driver.find_element_by_xpath(
